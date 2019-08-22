@@ -1,0 +1,15 @@
+
+Disk /dev/md0: 520 MB, 520093696 bytes, 1015808 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 524288 bytes / 1048576 bytes
+Disk label type: gpt
+Disk identifier: 666B24A2-DC62-45BA-8910-5008434E9681
+
+
+#         Start          End    Size  Type            Name
+ 1         2048       202751     98M  Microsoft basic boot
+ 2       202752       405503     99M  Microsoft basic home
+ 3       405504       600063     95M  Microsoft basic primary
+ 4       600064       802815     99M  Microsoft basic primary
+ 5       802816      1013759    103M  Microsoft basic primary
