@@ -7,13 +7,14 @@
 ````
 $ rpmdev-setuptree
 $ tree
-`
+
 -- rpmbuild
     |-- BUILD
     |-- RPMS
     |-- SOURCES
     |-- SPECS
-    -- SRPMS```
+    -- SRPMS
+    ```
 `$ wget https://nginx.org/packages/centos/7/SRPMS/nginx-1.14.1-1.el7_4.ngx.src.rpm`
 
 Разорхивируем пакет
