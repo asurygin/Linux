@@ -1,1 +1,0 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/asurygin/github/Linux/07-Boot System Linux","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
