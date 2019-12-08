@@ -17,8 +17,8 @@
         passwd
         touch /.autorelabel
         mount -o remount,ro /
-        exit
         exit```
+        exit
     1.Проверяем
 ### Способ второй
 
@@ -33,7 +33,7 @@
         passwd
         touch /.autorelabel
         mount -o remount,ro /
-        reboot
+        reboot```
 
         ### Установить систему с LVM, после чего переименовать VG
 
