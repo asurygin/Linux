@@ -18,7 +18,7 @@
         touch /.autorelabel
         mount -o remount,ro /
         exit
-        exit
+        exit```
     1.Проверяем
 ### Способ второй
 
