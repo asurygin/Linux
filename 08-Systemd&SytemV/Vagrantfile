@@ -49,17 +49,7 @@ Vagrant.configure("2") do |config|
                     end
             end
 
-        box.vm.provision "shell", inline: <<-SHELL
-            mkdir -p ~root/.ssh
-            cp ~vagrant/.ssh/auth* ~root/.ssh
-            yum updtae \
-            wget \
-            mc \
-            tree \
-            yum-utils \
-            mc \
-            net-tools 
-          SHELL
+        box.vm.provision "shell",  path: "provision.sh"
 
         end
     end
