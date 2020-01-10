@@ -16,4 +16,4 @@ timedatectl set-timezone Europe/Moscow
 git clone https://github.com/asurygin/systemd.git /srv
 
 sh /srv/monitor/monitor-setup.sh
-sh /srv/spawn-fcgi/fcigi-setup.sh
+sh /srv/spawn-fcgi/fcgi-setup.sh
