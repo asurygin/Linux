@@ -11,8 +11,8 @@
 # set permissive mode
 setenforce 0
 
-yum install -y git wget net-tools vim 
+yum install -y git wget net-tools vim
 timedatectl set-timezone Europe/Moscow
 git clone https://github.com/asurygin/systemd.git /srv
 
-./srv/monitor/monitor-setup.sh
+sh /srv/monitor/monitor-setup.sh
