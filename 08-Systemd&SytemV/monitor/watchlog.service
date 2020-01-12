@@ -4,5 +4,5 @@ Description=My watchlog service
 [Service]
 
 Type=oneshot
-EnvironmentFile=/etc/sysconfig/watchdog
-ExecStart=/opt/watchlog.sh $WORD $LOG
+EnvironmentFile=/etc/sysconfig/watchlog
+ExecStart=/usr/bin/watchlog.sh $WORD $LOG
