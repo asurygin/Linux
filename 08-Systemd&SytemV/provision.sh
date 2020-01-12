@@ -17,3 +17,4 @@ git clone https://github.com/asurygin/systemd.git /srv
 
 sh /srv/monitor/monitor-setup.sh
 sh /srv/spawn-fcgi/fcgi-setup.sh
+sh /srv/httpd/httpd-setup.sh
