@@ -1,0 +1,28 @@
+---
+ - name: install EPEL Repo and install Nginx
+   hosts: webservers
+   become: yes
+
+   tasks:
+
+      - name: Install EPEL Repo package from standard repo
+        yum:
+         name: epel-release
+         state: present
+
+      - name: install Nginx package
+        yum:
+          name: nginx
+          state: present
+        notify: restart nginx
+        tags:
+           - nginx-package
+           - package
+
+   handlers:
+
+        - name: restart nginx
+          systemd:
+            name: nginx
+            state: restarted
+            enabled: yes
