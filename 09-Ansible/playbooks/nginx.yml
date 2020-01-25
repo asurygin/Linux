@@ -1,28 +1,56 @@
 ---
- - name: install EPEL Repo and install Nginx
-   hosts: webservers
-   become: yes
+- name: Install and configure NGINX
+  hosts: nginx
+  become: true
+  gather_facts: false
+  vars:
+    nginx_listen_port: 8080
 
-   tasks:
+  tasks:
+    - name: Update pakeges OS
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
 
-      - name: Install EPEL Repo package from standard repo
-        yum:
-         name: epel-release
-         state: present
+    - name: Install EPEL Repo package from standart repo
+      yum:
+        name:
+        - epel-release
+        - wget
+        - git
+        - net-tools
+        state: latest
+      tags:
+        - epel-package
 
-      - name: install Nginx package
-        yum:
-          name: nginx
-          state: present
-        notify: restart nginx
-        tags:
-           - nginx-package
-           - package
+    - name: Install NGINX package from EPEL Repo
+      yum:
+        name: nginx
+        state: latest
+      notify:
+        - restart nginx
+      tags:
+        - nginx-package
+        - packages
 
-   handlers:
+    - name: Create NGINX config file from template
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      notify:
+        - reload nginx
+      tags:
+        - nginx-configuration
 
-        - name: restart nginx
-          systemd:
-            name: nginx
-            state: restarted
-            enabled: yes
+  handlers:
+    - name: restart nginx
+      systemd:
+        name: nginx
+        state: restarted
+        enabled: yes
+
+    - name: reload nginx
+      systemd:
+        name: nginx
+        state: reloaded

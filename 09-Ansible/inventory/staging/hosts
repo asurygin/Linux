@@ -1,3 +1,3 @@
-[webservers]
+[nginx]
 nc01 ansible_host=127.0.0.1 ansible_port=2222 ansible_private_key_file=.vagrant/machines/nc01/virtualbox/private_key
 nc02 ansible_host=127.0.0.1 ansible_port=2200 ansible_private_key_file=.vagrant/machines/nc02/virtualbox/private_key
