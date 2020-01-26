@@ -1,17 +1,12 @@
 ---
 - name: Install and configure NGINX
-  hosts: nginx
+  hosts: nc01, nc02
   become: true
   gather_facts: false
   vars:
     nginx_listen_port: 8080
 
   tasks:
-    - name: Update pakeges OS
-      yum:
-        name: '*'
-        state: latest
-        update_cache: yes
 
     - name: Install EPEL Repo package from standart repo
       yum:
